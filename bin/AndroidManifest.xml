@@ -27,6 +27,19 @@
             android:name="AddTransactionActivity"
             android:label="@string/action_addtransaction" >            
         </activity>
+        <activity
+            android:name="CapturedScreen"
+            android:label="Captured Screen" >            
+        </activity>
+        <activity
+            android:name="LoggedTransaction"
+            android:label="Logged Transaction" >            
+        </activity>
+        <activity 
+            android:name=".LoggedTranslucent" 
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+		
+		</activity>
     </application>
 
 </manifest>

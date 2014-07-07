@@ -3,6 +3,7 @@ package com.example.ocrmintdemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,18 +40,22 @@ public class AddTransactionActivity extends Activity implements OnClickListener{
 		switch(v.getId()){
 		
 		case R.id.imageCashTransaction:
+			String text = new String();
 			Toast.makeText(getBaseContext(), "CASH!", Toast.LENGTH_LONG).show();
+			Intent intentCash = new Intent("com.google.zxing.client.android.SCAN");
+			intentCash.putExtra("SCAN_MODE", "CHARACTER_SET");
+			intentCash.putExtra("QUERY", true);
+			startActivityForResult(intentCash, 0);
 			break;
 			
 		case R.id.imageCaptureTransaction:
-			Toast.makeText(getBaseContext(), "CAPTURE!!", Toast.LENGTH_LONG).show();
+			Toast.makeText(getBaseContext(), "Capture Your Receipt!", Toast.LENGTH_LONG).show();
 			
 			/* EXPERIMENTAL GOGGLES CODE */
-			Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-	       //intent.setPackage("com.google.zxing.client.android");
-	        intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+			Intent intent = new Intent("com.google.zxing.client.android.SCAN");			
+	       // intent.putExtra("SCAN_FORMAT", "CHARACTER_SET,PRODUCT_MODE,CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF");	        
 	        Log.d("TAG", "start goggles!");
-	        startActivityForResult(intent, 0);	        	        
+	        startActivityForResult(intent, 0 );	        	        
 			break;
 		}	
 	}
@@ -64,11 +69,18 @@ public class AddTransactionActivity extends Activity implements OnClickListener{
 	            String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 	            Log.d("TAG", "result back!"+contents);
 	            Toast.makeText(getBaseContext(), contents, Toast.LENGTH_LONG).show();
+	            Toast.makeText(getBaseContext(), format, Toast.LENGTH_LONG).show();
+	            
 	            
 	        } else if (resultCode == RESULT_CANCELED) {
-	        	Toast.makeText(getBaseContext(), "CANCELLED", Toast.LENGTH_LONG).show();
-	            // TODO: Handle cancel
+	        	//Toast.makeText(getBaseContext(), "CANCELLED", Toast.LENGTH_LONG).show();
+	        	
+	            // TODO: start intent to chipotle screen.
+	        	Intent receiptIntent = new Intent(AddTransactionActivity.this, CapturedScreen.class);
+	        	startActivity(receiptIntent);
 	        }
 	    }
+	    
+	    
 	}
 }

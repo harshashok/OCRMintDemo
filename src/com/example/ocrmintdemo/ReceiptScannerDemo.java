@@ -32,7 +32,7 @@ public class ReceiptScannerDemo extends Activity {
 		case R.id.action_addtransactions:
 			Toast.makeText(getBaseContext(), R.string.action_addtransaction, 
                     Toast.LENGTH_LONG).show();
-			Intent intent = new Intent(ReceiptScannerDemo.this, AddTransactionActivity.class);
+			Intent intent = new Intent(ReceiptScannerDemo.this, AddTransactionActivity.class);			
 			ReceiptScannerDemo.this.startActivity(intent);
 			break;
 		}
