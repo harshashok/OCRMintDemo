@@ -37,9 +37,16 @@
         </activity>
         <activity 
             android:name=".LoggedTranslucent" 
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
-		
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">		
 		</activity>
+		<activity
+            android:name="RecentPlaces"
+            android:label="Recently Visited" >            
+        </activity>
+        <activity
+            android:name="Splash"
+            android:label="Mint" >            
+        </activity>
     </application>
 
 </manifest>

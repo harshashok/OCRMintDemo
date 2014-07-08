@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="189dp"
-        android:text="Large Text"
+        android:text="Now wasn't that just so much easier?!"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:color="#FFFFFF"
          />

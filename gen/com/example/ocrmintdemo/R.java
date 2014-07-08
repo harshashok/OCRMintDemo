@@ -26,16 +26,21 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int mint_mainbackground=0x7f020001;
-        public static final int photo_receipt=0x7f020002;
+        public static final int loggedtransactionimage=0x7f020001;
+        public static final int mint_mainbackground=0x7f020002;
+        public static final int mintsplash=0x7f020003;
+        public static final int photo_receipt=0x7f020004;
+        public static final int recentplaces=0x7f020005;
     }
     public static final class id {
-        public static final int action_addtransactions=0x7f090005;
-        public static final int action_settings=0x7f090004;
+        public static final int action_addtransactions=0x7f090007;
+        public static final int action_settings=0x7f090006;
         public static final int imageCaptureTransaction=0x7f090001;
         public static final int imageCashTransaction=0x7f090000;
-        public static final int ivPhotoReceipt=0x7f090003;
-        public static final int textView1=0x7f090002;
+        public static final int ivLogTrans=0x7f090002;
+        public static final int ivPhotoReceipt=0x7f090004;
+        public static final int ivSplash=0x7f090005;
+        public static final int textView1=0x7f090003;
     }
     public static final class layout {
         public static final int activity_receipt_scanner_demo=0x7f030000;
@@ -43,6 +48,8 @@ public final class R {
         public static final int layout_loggedtransaction=0x7f030002;
         public static final int layout_logtranslucent=0x7f030003;
         public static final int layout_receipt=0x7f030004;
+        public static final int layout_recentplaces=0x7f030005;
+        public static final int layout_splash=0x7f030006;
     }
     public static final class menu {
         public static final int receipt_scanner_demo=0x7f080000;
